@@ -3,7 +3,6 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { SITE } from '@portfolio/shared';
 import { cn } from '@/lib/cn';
-import { HexMark } from '@/components/Hexagon';
 import { buttonClass } from '@/components/ui/ui';
 
 export const NAV = [
@@ -41,9 +40,8 @@ export function SiteHeader() {
   return (
     <header className={cn('no-print fixed inset-x-0 top-0 z-40 border-b transition-colors duration-200', scrolled || open ? 'border-line bg-bg/95' : 'border-transparent bg-transparent')}>
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-5 sm:px-8">
-        <Link to="/" className="flex items-center gap-2.5 font-semibold tracking-tight" aria-label={`${SITE.name}, home`}>
-          <HexMark className="h-8 w-8" />
-          <span className="hidden sm:inline">{SITE.name}</span>
+        <Link to="/" className="flex items-center font-bold tracking-tight text-fg transition-colors hover:text-gold" aria-label={`${SITE.name}, home`}>
+          <span>{SITE.name}</span>
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">

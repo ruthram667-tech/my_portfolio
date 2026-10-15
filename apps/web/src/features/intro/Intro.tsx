@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { SITE } from '@portfolio/shared';
-import { HexMark } from '@/components/Hexagon';
 
 const KEY = 'intro-seen-v1';
 
@@ -41,7 +40,6 @@ export function Intro() {
       <div className="intro__bar intro__bar--top" />
       <div className="intro__bar intro__bar--bottom" />
       <div className="intro__content">
-        <div className="intro__hex"><HexMark className="h-full w-full" filled /></div>
         <div className="intro__name" role="img" aria-label={SITE.name}>
           {first.map((c, i) => (
             <span key={i} aria-hidden style={{ animationDelay: `${1.8 + i * 0.04}s` }}>{c}</span>

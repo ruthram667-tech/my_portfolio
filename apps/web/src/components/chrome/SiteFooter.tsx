@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { Github, Instagram, Linkedin, Mail, MessageCircle } from 'lucide-react';
 import { SITE, SOCIALS } from '@portfolio/shared';
 import { Container } from '@/components/layout/layout';
-import { HexMark } from '@/components/Hexagon';
 
 const links = [
   { to: '/projects', label: 'Projects' },
@@ -27,7 +26,7 @@ export function SiteFooter() {
     <footer className="no-print mt-24 border-t border-line bg-surface">
       <Container className="grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <div className="flex items-center gap-2.5 font-semibold"><HexMark className="h-8 w-8" />{SITE.name}</div>
+          <div className="text-lg font-bold tracking-tight text-fg">{SITE.name}</div>
           <p className="mt-4 max-w-sm text-sm text-muted">{SITE.role}</p>
         </div>
         <nav aria-label="Footer">
