@@ -76,12 +76,12 @@ export function ConstellationMesh() {
     const ro = new ResizeObserver(resize);
     if (canvas.parentElement) ro.observe(canvas.parentElement);
 
-    // Golden constellation colors
-    const GOLD_R = 195;
-    const GOLD_G = 145;
-    const GOLD_B = 35;
-    const MAX_DIST = 135;
-    const MOUSE_DIST = 160;
+    // Vibrant golden constellation colors
+    const GOLD_R = 245;
+    const GOLD_G = 195;
+    const GOLD_B = 55;
+    const MAX_DIST = 140;
+    const MOUSE_DIST = 170;
 
     const render = () => {
       ctx.clearRect(0, 0, width, height);
@@ -100,8 +100,8 @@ export function ConstellationMesh() {
 
         // Draw particle node
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${GOLD_R}, ${GOLD_G}, ${GOLD_B}, ${p.baseAlpha})`;
+        ctx.arc(p.x, p.y, p.radius * 1.1, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${GOLD_R}, ${GOLD_G}, ${GOLD_B}, ${p.baseAlpha * 1.1})`;
         ctx.fill();
 
         // Connect with nearby particles
@@ -112,12 +112,12 @@ export function ConstellationMesh() {
           const dist = Math.hypot(dx, dy);
 
           if (dist < MAX_DIST) {
-            const alpha = (1 - dist / MAX_DIST) * 0.38;
+            const alpha = (1 - dist / MAX_DIST) * 0.48;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
             ctx.strokeStyle = `rgba(${GOLD_R}, ${GOLD_G}, ${GOLD_B}, ${alpha})`;
-            ctx.lineWidth = 1;
+            ctx.lineWidth = 1.1;
             ctx.stroke();
           }
         }
@@ -129,12 +129,12 @@ export function ConstellationMesh() {
           const dist = Math.hypot(dx, dy);
 
           if (dist < MOUSE_DIST) {
-            const alpha = (1 - dist / MOUSE_DIST) * 0.6;
+            const alpha = (1 - dist / MOUSE_DIST) * 0.75;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(mouse.x, mouse.y);
             ctx.strokeStyle = `rgba(${GOLD_R}, ${GOLD_G}, ${GOLD_B}, ${alpha})`;
-            ctx.lineWidth = 1.2;
+            ctx.lineWidth = 1.3;
             ctx.stroke();
           }
         }

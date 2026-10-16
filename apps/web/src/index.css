@@ -1,24 +1,24 @@
 @import '@fontsource-variable/inter';
 @import 'tailwindcss';
 
-/* Grey UI, Black wording and Gold accents */
+/* Grey UI (#7e8185), True Black wording and Radiant Gold accents */
 @theme {
   --font-sans: 'Inter Variable', Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  --color-bg: #eceef1;
-  --color-surface: #ffffff;
-  --color-surface-2: #f4f5f8;
-  --color-surface-3: #e2e5e9;
-  --color-line: #d3d7de;
-  --color-line-strong: #9ca3af;
-  --color-fg: #0d0e11;
-  --color-muted: #374151;
-  --color-subtle: #6b7280;
-  --color-gold: #b58117;
-  --color-gold-hi: #c99324;
-  --color-gold-dim: #8f6511;
-  --color-on-gold: #ffffff;
+  --color-bg: #7e8185;
+  --color-surface: #6f7276;
+  --color-surface-2: #65686c;
+  --color-surface-3: #5b5e62;
+  --color-line: #63666a;
+  --color-line-strong: #4a4c50;
+  --color-fg: #000000;
+  --color-muted: #141517;
+  --color-subtle: #25272a;
+  --color-gold: #f2be36;
+  --color-gold-hi: #fed366;
+  --color-gold-dim: #c59720;
+  --color-on-gold: #000000;
   --color-danger: #dc2626;
 
   --radius-sm: 6px;
