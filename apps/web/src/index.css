@@ -62,9 +62,8 @@
   .defer { content-visibility: auto; contain-intrinsic-size: auto 600px; }
 }
 
-/* ---------- Intro (CSS only: transform and opacity) ---------- */
-html.intro-lock, html.intro-lock body { overflow: hidden; }
-.intro { position: fixed; inset: 0; z-index: 100; background: var(--color-bg); display: grid; place-items: center; animation: intro-out 0.6s var(--ease-out) 3.3s forwards; }
+/* ---------- Intro (Disabled) ---------- */
+.intro { display: none !important; }
 .intro__line { position: absolute; left: 50%; top: 50%; width: min(60vw, 520px); height: 1px; background: var(--color-line-strong); transform: translateX(-50%) scaleX(0); transform-origin: center; animation: intro-line 0.7s var(--ease-out) 0.1s forwards, intro-hide 0.3s ease 1.0s forwards; }
 .intro__dot { position: absolute; left: 50%; top: 50%; width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 99px; background: var(--color-gold); opacity: 0; animation: intro-dot 0.7s var(--ease-out) 0.1s forwards, intro-hide 0.3s ease 1.0s forwards; }
 .intro__bar { position: absolute; left: 0; right: 0; height: 14vh; background: #000; transform: scaleY(0); animation: intro-bar 0.5s var(--ease-out) 0.8s forwards; }

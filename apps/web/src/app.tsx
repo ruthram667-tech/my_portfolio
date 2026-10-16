@@ -4,7 +4,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { SiteHeader } from '@/components/chrome/SiteHeader';
 import { SiteFooter } from '@/components/chrome/SiteFooter';
 import { RouteEffects, ScrollProgress } from '@/components/chrome/RouteEffects';
-import { Intro } from '@/features/intro/Intro';
 import { Container } from '@/components/layout/layout';
 import { ButtonLink } from '@/components/ui/ui';
 
@@ -35,7 +34,6 @@ function RootLayout() {
   return (
     <QueryClientProvider client={queryClient}>
       <a href="#content" className="sr-only z-[200] rounded-md bg-gold px-4 py-2 font-semibold text-on-gold focus:not-sr-only focus:fixed focus:left-4 focus:top-4">Skip to content</a>
-      <Intro />
       <ScrollProgress />
       <RouteEffects />
       <SiteHeader />
