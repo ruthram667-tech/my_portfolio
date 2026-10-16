@@ -134,36 +134,38 @@ export function Home() {
         </div>
       </Section>
 
-      <Section muted className="defer">
-        <div className="grid gap-10 md:grid-cols-[1fr_1.2fr] md:items-center">
-          <div>
-            <p className="label">Venture</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Unitaryx</h2>
-          </div>
-          <div>
-            <p className="text-lg text-muted">
-              A student startup I co-founded. I lead a team of <span className="font-semibold text-gold">ten</span> working across <span className="font-semibold text-gold">IoT hardware</span>, <span className="font-semibold text-gold">machine learning</span> and software product development.
-            </p>
-            <Link to="/unitaryx" className="mt-5 inline-flex items-center gap-1.5 font-medium text-gold hover:underline">About Unitaryx <ArrowRight size={16} aria-hidden /></Link>
+      <Section className="defer">
+        <div className="card-3d p-8 md:p-12">
+          <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:items-center">
+            <div>
+              <p className="label font-bold text-fg/80">Venture</p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-fg md:text-4xl">Unitaryx</h2>
+            </div>
+            <div>
+              <p className="text-lg font-medium leading-relaxed text-muted">
+                A student startup I co-founded. I lead a team of <span className="font-semibold text-gold">ten</span> working across <span className="font-semibold text-gold">IoT hardware</span>, <span className="font-semibold text-gold">machine learning</span> and software product development.
+              </p>
+              <Link to="/unitaryx" className="mt-5 inline-flex items-center gap-1.5 font-bold text-gold hover:underline">About Unitaryx <ArrowRight size={16} aria-hidden /></Link>
+            </div>
           </div>
         </div>
       </Section>
 
       <Section className="defer">
-        <SectionHeader title="What I work with" action={<Link to="/skills" className="inline-flex items-center gap-1.5 text-sm text-gold hover:underline">All skills <ArrowRight size={16} aria-hidden /></Link>} />
+        <SectionHeader title="What I work with" action={<Link to="/skills" className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold hover:underline">All skills <ArrowRight size={16} aria-hidden /></Link>} />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {SKILLS.map((g) => (
-            <div key={g.group}>
-              <p className="label mb-3">{g.group}</p>
-              <ul className="flex flex-wrap gap-1.5">{g.skills.map((s) => <li key={s}><Tag>{s}</Tag></li>)}</ul>
+          {SKILLS.map((g, i) => (
+            <div key={g.group} style={{ animationDelay: `${0.1 + i * 0.08}s` }} className="card-3d animate-popup-3d p-6 cursor-pointer">
+              <p className="label mb-3 font-bold text-fg/90">{g.group}</p>
+              <ul className="flex flex-wrap gap-1.5">{g.skills.map((s) => <li key={s}><Tag className="bg-black/15 border-black/20 text-fg font-medium">{s}</Tag></li>)}</ul>
             </div>
           ))}
         </div>
       </Section>
 
       <Section className="defer pt-0">
-        <div className="rounded-lg border border-line bg-surface p-8 md:p-12">
-          <h2 className="max-w-xl text-3xl font-bold tracking-tight md:text-4xl">Have a project or an idea? Let&apos;s talk.</h2>
+        <div className="card-3d p-8 md:p-12">
+          <h2 className="max-w-xl text-3xl font-extrabold tracking-tight text-fg md:text-4xl">Have a project or an idea? Let&apos;s talk.</h2>
           <div className="mt-6"><ButtonLink to="/contact" size="lg">Get in touch <ArrowRight size={18} aria-hidden /></ButtonLink></div>
         </div>
       </Section>
