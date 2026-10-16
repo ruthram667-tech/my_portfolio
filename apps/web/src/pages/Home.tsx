@@ -5,6 +5,7 @@ import { SITE, SOCIALS, SKILLS } from '@portfolio/shared';
 import { Container, Section, SectionHeader } from '@/components/layout/layout';
 import { ButtonLink, Tag } from '@/components/ui/ui';
 import { ProjectCard } from '@/components/ProjectCard';
+import { ConstellationMesh } from '@/features/hero/ConstellationMesh';
 import { useProjects } from '@/data-access';
 import { sortProjects } from '@/lib/filters';
 import { useSeo } from '@/lib/seo';
@@ -61,24 +62,27 @@ export function Home() {
   return (
     <>
       <section className="relative overflow-hidden border-b border-line">
+        <ConstellationMesh />
         <div className="grid-lines pointer-events-none absolute inset-0" aria-hidden />
         <Container className="relative pb-16 pt-32 md:pb-24 md:pt-40">
           <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
             <p className="label rise">Portfolio · {new Date().getFullYear()}</p>
             <h1 className="rise rise-2 mt-5 font-extrabold leading-[1.05] tracking-tight">
-              <span className="block text-2xl font-semibold text-muted md:text-3xl">Hi, I&apos;m</span>
-              <span className="mt-1 block text-4xl text-gold sm:text-5xl md:text-6xl">{SITE.name}</span>
+              <span className="block text-3xl font-extrabold text-fg md:text-4xl">Hi There, I&apos;m</span>
+              <span className="mt-2 block text-4xl font-extrabold text-gold sm:text-5xl md:text-6xl drop-shadow-sm">{SITE.name}</span>
             </h1>
             <TypingWords />
-            <p className="rise rise-3 mt-6 max-w-2xl text-lg text-muted">{SITE.intro}</p>
+            <p className="rise rise-3 mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+              I build across <span className="font-semibold text-gold">IoT hardware</span>, <span className="font-semibold text-gold">machine learning</span> and <span className="font-semibold text-gold">software products</span>. I study <span className="font-semibold text-gold">Artificial Intelligence</span> &amp; <span className="font-semibold text-gold">Data Science</span>, and I co-founded <span className="font-semibold text-gold">Unitaryx</span>, a student startup where I lead a team of ten.
+            </p>
             <div className="rise rise-4 mt-9 flex flex-wrap items-center justify-center gap-3">
               <ButtonLink to="/projects" size="lg">View projects <ArrowRight size={18} aria-hidden /></ButtonLink>
               <ButtonLink to="/contact" variant="outline" size="lg">Contact</ButtonLink>
             </div>
             <div className="mt-10 flex items-center justify-center gap-2 text-muted">
-              {SOCIALS.github && <a aria-label="GitHub" href={SOCIALS.github} target="_blank" rel="noopener noreferrer" className="grid h-10 w-10 place-items-center rounded-md border border-line hover:border-gold hover:text-gold"><Github size={18} /></a>}
-              {SOCIALS.linkedin && <a aria-label="LinkedIn" href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" className="grid h-10 w-10 place-items-center rounded-md border border-line hover:border-gold hover:text-gold"><Linkedin size={18} /></a>}
-              <a aria-label="Email" href={`mailto:${SOCIALS.email}`} className="grid h-10 w-10 place-items-center rounded-md border border-line hover:border-gold hover:text-gold"><Mail size={18} /></a>
+              {SOCIALS.github && <a aria-label="GitHub" href={SOCIALS.github} target="_blank" rel="noopener noreferrer" className="grid h-10 w-10 place-items-center rounded-md border border-line bg-surface text-fg hover:border-gold hover:text-gold shadow-sm transition-colors"><Github size={18} /></a>}
+              {SOCIALS.linkedin && <a aria-label="LinkedIn" href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" className="grid h-10 w-10 place-items-center rounded-md border border-line bg-surface text-fg hover:border-gold hover:text-gold shadow-sm transition-colors"><Linkedin size={18} /></a>}
+              <a aria-label="Email" href={`mailto:${SOCIALS.email}`} className="grid h-10 w-10 place-items-center rounded-md border border-line bg-surface text-fg hover:border-gold hover:text-gold shadow-sm transition-colors"><Mail size={18} /></a>
             </div>
           </div>
         </Container>
@@ -138,9 +142,9 @@ export function Home() {
           </div>
           <div>
             <p className="text-lg text-muted">
-              A student startup I co-founded. I lead a team of ten working across IoT hardware, machine learning and software product development.
+              A student startup I co-founded. I lead a team of <span className="font-semibold text-gold">ten</span> working across <span className="font-semibold text-gold">IoT hardware</span>, <span className="font-semibold text-gold">machine learning</span> and software product development.
             </p>
-            <Link to="/unitaryx" className="mt-5 inline-flex items-center gap-1.5 text-gold hover:underline">About Unitaryx <ArrowRight size={16} aria-hidden /></Link>
+            <Link to="/unitaryx" className="mt-5 inline-flex items-center gap-1.5 font-medium text-gold hover:underline">About Unitaryx <ArrowRight size={16} aria-hidden /></Link>
           </div>
         </div>
       </Section>

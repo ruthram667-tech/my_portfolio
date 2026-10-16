@@ -1,25 +1,25 @@
 @import '@fontsource-variable/inter';
 @import 'tailwindcss';
 
-/* Black, grey and gold. One dark theme. */
+/* Grey UI, Black wording and Gold accents */
 @theme {
   --font-sans: 'Inter Variable', Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  --color-bg: #070708;
-  --color-surface: #0e0e10;
-  --color-surface-2: #151518;
-  --color-surface-3: #1d1d21;
-  --color-line: #26262b;
-  --color-line-strong: #3a3a41;
-  --color-fg: #f4f4f5;
-  --color-muted: #a1a1aa;
-  --color-subtle: #8b8b94;
-  --color-gold: #dcb464;
-  --color-gold-hi: #ecc97f;
-  --color-gold-dim: #8a6f35;
-  --color-on-gold: #0a0a0b;
-  --color-danger: #f1948a;
+  --color-bg: #eceef1;
+  --color-surface: #ffffff;
+  --color-surface-2: #f4f5f8;
+  --color-surface-3: #e2e5e9;
+  --color-line: #d3d7de;
+  --color-line-strong: #9ca3af;
+  --color-fg: #0d0e11;
+  --color-muted: #374151;
+  --color-subtle: #6b7280;
+  --color-gold: #b58117;
+  --color-gold-hi: #c99324;
+  --color-gold-dim: #8f6511;
+  --color-on-gold: #ffffff;
+  --color-danger: #dc2626;
 
   --radius-sm: 6px;
   --radius-md: 10px;
@@ -29,7 +29,7 @@
 }
 
 @layer base {
-  html { color-scheme: dark; background: var(--color-bg); scroll-padding-top: 5rem; }
+  html { color-scheme: light; background: var(--color-bg); scroll-padding-top: 5rem; }
   body {
     margin: 0;
     background: var(--color-bg);
@@ -39,14 +39,14 @@
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
-  ::selection { background: var(--color-gold); color: var(--color-on-gold); }
+  ::selection { background: var(--color-gold); color: #ffffff; }
   :focus-visible { outline: 2px solid var(--color-gold); outline-offset: 3px; border-radius: 4px; }
   h1, h2, h3 { letter-spacing: -0.02em; text-wrap: balance; }
   p { text-wrap: pretty; }
   ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-track { background: var(--color-bg); }
-  ::-webkit-scrollbar-thumb { background: var(--color-line-strong); border-radius: 999px; }
-  ::-webkit-scrollbar-thumb:hover { background: var(--color-gold-dim); }
+  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
 }
 
 @layer utilities {
@@ -54,10 +54,10 @@
   .tabular { font-variant-numeric: tabular-nums; }
   .grid-lines {
     background-image:
-      linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+      linear-gradient(to right, rgb(0 0 0 / 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(0 0 0 / 0.035) 1px, transparent 1px);
     background-size: 64px 64px;
-    mask-image: radial-gradient(ellipse at 70% 40%, black 10%, transparent 70%);
+    mask-image: radial-gradient(ellipse at 50% 40%, black 15%, transparent 75%);
   }
   .defer { content-visibility: auto; contain-intrinsic-size: auto 600px; }
 }
