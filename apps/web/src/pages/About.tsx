@@ -15,20 +15,13 @@ export function About() {
             <p>My work sits where IoT hardware meets machine learning and software product development, from a sensor on a bench to something people can use.</p>
           </div>
           <aside className="space-y-6">
-            <div className="card-3d overflow-hidden rounded-2xl p-2.5">
-              <div className="relative overflow-hidden rounded-xl bg-surface/50">
-                <img
-                  src="/profile-cutout.png"
-                  alt={SITE.name}
-                  className="h-auto w-full object-cover object-top"
-                  style={{
-                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
-                  }}
-                />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-surface to-transparent" aria-hidden />
-              </div>
-              <div className="p-3 text-center">
+            <div className="overflow-hidden rounded-2xl bg-[#7e8185] shadow-lg">
+              <img
+                src="/user-photo.png"
+                alt={SITE.name}
+                className="h-auto w-full object-cover object-top select-none"
+              />
+              <div className="p-3 text-center bg-surface/50">
                 <p className="font-black text-black">{SITE.name}</p>
                 <p className="text-xs font-bold text-black/75">Founder of Jyruka · Member of Unitaryx</p>
               </div>
