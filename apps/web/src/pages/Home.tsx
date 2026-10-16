@@ -65,25 +65,66 @@ export function Home() {
       <section className="relative overflow-hidden border-b border-line">
         <ConstellationMesh />
         <div className="grid-lines pointer-events-none absolute inset-0" aria-hidden />
-        <Container className="relative pb-16 pt-32 md:pb-24 md:pt-40">
-          <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-            <p className="label rise font-bold text-black/80">Portfolio · {new Date().getFullYear()}</p>
-            <h1 className="rise rise-2 mt-5 font-black leading-[1.05] tracking-tight">
-              <span className="block text-3xl font-extrabold text-black md:text-4xl">Hi There, I&apos;m</span>
-              <span className="mt-2 block text-4xl font-black text-black sm:text-5xl md:text-6xl">{SITE.name}</span>
-            </h1>
-            <TypingWords />
-            <p className="rise rise-3 mt-6 max-w-2xl text-lg font-medium leading-relaxed text-black/85">
-              I build across <span className="font-extrabold text-black">IoT hardware</span>, <span className="font-extrabold text-black">machine learning</span> and <span className="font-extrabold text-black">software products</span>. I study <span className="font-extrabold text-black">Artificial Intelligence</span> &amp; <span className="font-extrabold text-black">Data Science</span>. I am the founder of <span className="font-extrabold text-black">Jyruka</span>, collaborating with <span className="font-extrabold text-black">Unitaryx</span> where I am an active member.
-            </p>
-            <div className="rise rise-4 mt-9 flex flex-wrap items-center justify-center gap-3">
-              <ButtonLink to="/projects" size="lg">View projects <ArrowRight size={18} aria-hidden /></ButtonLink>
-              <ButtonLink to="/contact" variant="outline" size="lg">Contact</ButtonLink>
+        <Container className="relative pb-16 pt-28 md:pb-24 md:pt-36">
+          <div className="grid items-center gap-12 lg:grid-cols-12">
+            <div className="flex flex-col items-center text-center lg:col-span-7 lg:items-start lg:text-left">
+              <p className="label rise font-bold text-black/80">Portfolio · {new Date().getFullYear()}</p>
+              <h1 className="rise rise-2 mt-4 font-black leading-[1.05] tracking-tight">
+                <span className="block text-3xl font-extrabold text-black md:text-4xl">Hi There, I&apos;m</span>
+                <span className="mt-2 block text-4xl font-black text-black sm:text-5xl md:text-6xl">{SITE.name}</span>
+              </h1>
+              <TypingWords />
+              <p className="rise rise-3 mt-5 max-w-2xl text-lg font-medium leading-relaxed text-black/85">
+                I build across <span className="font-extrabold text-black">IoT hardware</span>, <span className="font-extrabold text-black">machine learning</span> and <span className="font-extrabold text-black">software products</span>. I study <span className="font-extrabold text-black">Artificial Intelligence</span> &amp; <span className="font-extrabold text-black">Data Science</span>. I am the founder of <span className="font-extrabold text-black">Jyruka</span>, collaborating with <span className="font-extrabold text-black">Unitaryx</span> where I am an active member.
+              </p>
+              <div className="rise rise-4 mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                <ButtonLink to="/projects" size="lg">View projects <ArrowRight size={18} aria-hidden /></ButtonLink>
+                <ButtonLink to="/contact" variant="outline" size="lg">Contact</ButtonLink>
+              </div>
+              <div className="mt-8 flex items-center justify-center gap-2 text-muted lg:justify-start">
+                {SOCIALS.github && <a aria-label="GitHub" href={SOCIALS.github} target="_blank" rel="noopener noreferrer" className="grid h-10 w-10 place-items-center rounded-md border border-line bg-surface text-black hover:border-black hover:text-black shadow-sm transition-colors"><Github size={18} /></a>}
+                {SOCIALS.linkedin && <a aria-label="LinkedIn" href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" className="grid h-10 w-10 place-items-center rounded-md border border-line bg-surface text-black hover:border-black hover:text-black shadow-sm transition-colors"><Linkedin size={18} /></a>}
+                <a aria-label="Email" href={`mailto:${SOCIALS.email}`} className="grid h-10 w-10 place-items-center rounded-md border border-line bg-surface text-black hover:border-black hover:text-black shadow-sm transition-colors"><Mail size={18} /></a>
+              </div>
             </div>
-            <div className="mt-10 flex items-center justify-center gap-2 text-muted">
-              {SOCIALS.github && <a aria-label="GitHub" href={SOCIALS.github} target="_blank" rel="noopener noreferrer" className="grid h-10 w-10 place-items-center rounded-md border border-line bg-surface text-black hover:border-black hover:text-black shadow-sm transition-colors"><Github size={18} /></a>}
-              {SOCIALS.linkedin && <a aria-label="LinkedIn" href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer" className="grid h-10 w-10 place-items-center rounded-md border border-line bg-surface text-black hover:border-black hover:text-black shadow-sm transition-colors"><Linkedin size={18} /></a>}
-              <a aria-label="Email" href={`mailto:${SOCIALS.email}`} className="grid h-10 w-10 place-items-center rounded-md border border-line bg-surface text-black hover:border-black hover:text-black shadow-sm transition-colors"><Mail size={18} /></a>
+
+            {/* Photo frame seamlessly blended with background */}
+            <div className="rise rise-3 relative mx-auto w-full max-w-xs sm:max-w-sm lg:col-span-5 lg:max-w-none">
+              <div className="relative mx-auto max-w-[340px] sm:max-w-[380px]">
+                {/* Ambient halo blending with background */}
+                <div className="absolute -inset-3 rounded-[2.5rem] bg-black/15 blur-2xl opacity-60 pointer-events-none" aria-hidden />
+
+                {/* 3D Frame matching site background slabs */}
+                <div className="card-3d relative overflow-hidden rounded-[2.2rem] border border-black/15 bg-surface/80 p-2.5 shadow-2xl backdrop-blur-sm">
+                  <div className="relative overflow-hidden rounded-[1.8rem] bg-gradient-to-b from-surface/40 via-surface/20 to-[#7e8185]">
+                    <img
+                      src="/profile-cutout.png"
+                      alt={SITE.name}
+                      width={576}
+                      height={1024}
+                      className="h-auto w-full object-cover object-top drop-shadow-md transition-transform duration-500 hover:scale-105"
+                      style={{
+                        maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
+                        WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
+                      }}
+                    />
+                    {/* Bottom fade into background */}
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-surface via-surface/60 to-transparent" aria-hidden />
+                  </div>
+
+                  {/* Sleek bottom badge */}
+                  <div className="absolute bottom-4 inset-x-4 flex items-center justify-between rounded-xl border border-black/20 bg-surface/90 px-4 py-2.5 shadow-lg backdrop-blur-md">
+                    <div>
+                      <p className="text-xs font-black tracking-wider text-black uppercase">Founder @ Jyruka</p>
+                      <p className="text-[11px] font-bold text-black/75">Member of Unitaryx</p>
+                    </div>
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-black"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </Container>
