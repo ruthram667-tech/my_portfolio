@@ -12,15 +12,15 @@ export function ProjectCard({ project, index }: { project: Project; index?: numb
       className="card-3d animate-popup-3d group relative flex h-full flex-col p-6 cursor-pointer"
     >
       <div className="flex items-center justify-between">
-        <span className="label font-bold text-fg/80">{project.category}</span>
-        {typeof index === 'number' && <span className="label tabular font-extrabold text-gold">{String(index + 1).padStart(2, '0')}</span>}
+        <span className="label font-bold text-black/80">{project.category}</span>
+        {typeof index === 'number' && <span className="label tabular font-black text-black">{String(index + 1).padStart(2, '0')}</span>}
       </div>
-      <h3 className="mt-5 text-2xl font-extrabold tracking-tight text-fg transition-colors group-hover:text-gold">
+      <h3 className="mt-5 text-2xl font-extrabold tracking-tight text-black transition-colors group-hover:text-gold">
         <Link to={`/projects/${project.slug}`} className="after:absolute after:inset-0 after:content-['']">
           {project.title}
         </Link>
       </h3>
-      {project.org && <p className="mt-1 text-sm font-semibold text-gold">{project.org}</p>}
+      {project.org && <p className="mt-1 text-sm font-black text-black">{project.org}</p>}
       <p className="mt-3 flex-1 font-medium text-muted leading-relaxed">{project.summary}</p>
       {project.tags.length > 0 && (
         <ul className="mt-5 flex flex-wrap gap-1.5" aria-label="Technologies">

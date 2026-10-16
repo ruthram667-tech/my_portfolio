@@ -44,7 +44,7 @@ export function ProjectDetail() {
           </div>
           <aside className="h-fit space-y-6 rounded-lg border border-line bg-surface p-6 lg:sticky lg:top-24">
             <div><p className="label">Category</p><p className="mt-1.5">{project.category}</p></div>
-            {project.org && <div><p className="label">Venture</p><p className="mt-1.5 text-gold">{project.org}</p></div>}
+            {project.org && <div><p className="label font-bold text-black/70">Venture</p><p className="mt-1.5 font-bold text-black">{project.org}</p></div>}
             {project.tags.length > 0 && (
               <div><p className="label mb-2">Technologies</p><ul className="flex flex-wrap gap-1.5">{project.tags.map((t) => <li key={t}><Tag>{t}</Tag></li>)}</ul></div>
             )}

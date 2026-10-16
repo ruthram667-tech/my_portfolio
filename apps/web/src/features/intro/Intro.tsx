@@ -44,7 +44,7 @@ export function Intro() {
           {first.map((c, i) => (
             <span key={i} aria-hidden style={{ animationDelay: `${1.8 + i * 0.04}s` }}>{c}</span>
           ))}
-          <span aria-hidden className="ml-3 text-gold" style={{ animationDelay: `${1.8 + first.length * 0.04 + 0.1}s` }}>S B</span>
+          <span aria-hidden className="ml-3 font-black text-black" style={{ animationDelay: `${1.8 + first.length * 0.04 + 0.1}s` }}>S B</span>
         </div>
         <p className="intro__sub">AI &amp; Data Science · IoT · Software</p>
       </div>
