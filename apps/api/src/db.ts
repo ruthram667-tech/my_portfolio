@@ -74,8 +74,7 @@ export class Store {
 
   // ---------- seed ----------
   async seed(admin?: { email?: string; password?: string }) {
-    const count = (this.db.prepare('SELECT COUNT(*) AS n FROM projects').get() as { n: number }).n;
-    if (count === 0) PROJECTS.forEach((p) => this.upsertProject(p));
+    PROJECTS.forEach((p) => this.upsertProject(p));
     if (admin?.email && admin.password) {
       const exists = this.db.prepare('SELECT id FROM users WHERE email = ?').get(admin.email.toLowerCase());
       if (!exists) {

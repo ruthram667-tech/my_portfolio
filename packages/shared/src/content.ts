@@ -4,9 +4,9 @@ import type { ExperienceItem, Project, SkillGroup, Socials } from './schemas';
 
 export const SITE = {
   name: 'Ruthramoorthy S B',
-  role: 'B.Tech AI & Data Science student · Co-founder of Unitaryx',
+  role: 'B.Tech AI & Data Science student · Founder of Jyruka · Member of Unitaryx',
   intro:
-    'I build across IoT hardware, machine learning and software products. I study Artificial Intelligence and Data Science, and I co-founded Unitaryx, a student startup where I lead a team of ten.',
+    'I build across IoT hardware, machine learning and software products. I study Artificial Intelligence and Data Science at M. Kumarasamy College of Engineering. I am the founder of Jyruka, collaborating with Unitaryx where I am an active member.',
   institution: 'M. Kumarasamy College of Engineering',
   graduation: '2029',
   typingWords: ['Web Development', 'UI/UX Design', 'Machine Learning', 'IoT Solutions'],
@@ -30,8 +30,8 @@ export const PROJECTS: Project[] = [
     summary: 'A smart predictive inventory and autonomous replenishment system.',
     tags: ['IoT', 'Machine Learning'],
     featured: true,
-    org: 'Unitaryx',
-    sections: { overview: 'Buffex is a smart predictive inventory and autonomous replenishment system built at Unitaryx, combining IoT hardware with machine learning.' },
+    org: 'Jyruka × Unitaryx',
+    sections: { overview: 'Buffex is a smart predictive inventory and autonomous replenishment system built in collaboration between Jyruka and Unitaryx, combining IoT hardware with machine learning.' },
     sortOrder: 1,
   },
   {
@@ -41,8 +41,8 @@ export const PROJECTS: Project[] = [
     summary: 'An IoT water quality monitoring system, also known as AquaSight AI.',
     tags: ['IoT', 'Water quality'],
     featured: true,
-    org: 'Unitaryx',
-    sections: { overview: 'Neervahini (AquaSight AI) is an IoT water quality monitoring system built at Unitaryx.' },
+    org: 'Jyruka × Unitaryx',
+    sections: { overview: 'Neervahini (AquaSight AI) is an IoT water quality monitoring system built in collaboration between Jyruka and Unitaryx.' },
     sortOrder: 2,
   },
   {
@@ -100,9 +100,17 @@ export const PROJECTS: Project[] = [
 export const EXPERIENCE: ExperienceItem[] = [
   {
     kind: 'venture',
-    title: 'Co-founder',
+    title: 'Founder',
+    org: 'Jyruka',
+    period: 'Present',
+    description: 'Founder of Jyruka, leading product strategy, IoT hardware architecture, and software development in strategic collaboration with Unitaryx.',
+  },
+  {
+    kind: 'venture',
+    title: 'Member & Collaborator',
     org: 'Unitaryx',
-    description: 'Co-founded a student startup and lead a team of ten, working across IoT hardware, machine learning and software product development.',
+    period: 'Present',
+    description: 'Active team member collaborating on IoT hardware, machine learning systems, and innovative student startup engineering.',
   },
   {
     kind: 'education',

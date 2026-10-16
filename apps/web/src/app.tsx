@@ -73,6 +73,7 @@ const router = createBrowserRouter(
         { path: 'projects/:slug', element: <ProjectDetail /> },
         { path: 'case-study/:slug', element: <OldCaseStudy /> },
         { path: 'unitaryx', element: <Unitaryx /> },
+        { path: 'jyruka', element: <Unitaryx /> },
         { path: 'experience', element: <Experience /> },
         { path: 'skills', element: <Skills /> },
         { path: 'blog', element: <Blog /> },

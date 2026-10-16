@@ -9,7 +9,7 @@ export function Experience() {
   const { data: items = [] } = useExperience();
   return (
     <>
-      <PageHeader title="Experience" description="Education and the venture I co-founded." crumbs={[{ label: 'Experience' }]} />
+      <PageHeader title="Experience" description="Education, my company Jyruka, and collaboration with Unitaryx." crumbs={[{ label: 'Experience' }]} />
       <Section>
         <ol className="relative max-w-3xl space-y-10 border-l border-line-strong pl-8">
           {items.map((e) => (
@@ -18,7 +18,7 @@ export function Experience() {
               <p className="label">{kindLabel[e.kind]}{e.period ? ` · ${e.period}` : ''}</p>
               <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-black">{e.title}</h2>
               <p className="font-extrabold text-black">{e.org}</p>
-              {e.description && <p className="mt-3 text-muted">{e.description}</p>}
+              {e.description && <p className="mt-3 font-medium text-black/85">{e.description}</p>}
             </li>
           ))}
         </ol>

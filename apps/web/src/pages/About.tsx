@@ -4,13 +4,13 @@ import { ButtonLink, Tag } from '@/components/ui/ui';
 import { useSeo } from '@/lib/seo';
 
 export function About() {
-  useSeo('About', 'About Ruthramoorthy S B: B.Tech AI & Data Science student and co-founder of Unitaryx.');
+  useSeo('About', 'About Ruthramoorthy S B: B.Tech AI & Data Science student, Founder of Jyruka, and member of Unitaryx.');
   return (
     <>
       <PageHeader title="About" description={SITE.role} crumbs={[{ label: 'About' }]} />
       <Section>
         <div className="grid gap-12 md:grid-cols-[1.3fr_1fr]">
-          <div className="space-y-5 text-lg text-muted">
+          <div className="space-y-5 text-lg font-medium text-black/85 leading-relaxed">
             <p>{SITE.intro}</p>
             <p>My work sits where IoT hardware meets machine learning and software product development, from a sensor on a bench to something people can use.</p>
           </div>

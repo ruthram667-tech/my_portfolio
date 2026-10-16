@@ -5,7 +5,7 @@ import { Container } from '@/components/layout/layout';
 
 const links = [
   { to: '/projects', label: 'Projects' },
-  { to: '/unitaryx', label: 'Unitaryx' },
+  { to: '/unitaryx', label: 'Jyruka × Unitaryx' },
   { to: '/experience', label: 'Experience' },
   { to: '/skills', label: 'Skills' },
   { to: '/blog', label: 'Blog' },

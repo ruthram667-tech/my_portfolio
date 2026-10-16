@@ -9,7 +9,7 @@ export const NAV = [
   { to: '/', label: 'Home', end: true },
   { to: '/about', label: 'About' },
   { to: '/projects', label: 'Projects' },
-  { to: '/unitaryx', label: 'Unitaryx' },
+  { to: '/unitaryx', label: 'Jyruka × Unitaryx' },
   { to: '/experience', label: 'Experience' },
   { to: '/skills', label: 'Skills' },
   { to: '/blog', label: 'Blog' },

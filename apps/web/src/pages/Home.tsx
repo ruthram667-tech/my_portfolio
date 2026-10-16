@@ -36,7 +36,8 @@ function TypingWords() {
 }
 
 const MARQUEE_ITEMS = [
-  { text: '10 Team Members @ Unitaryx', highlight: true },
+  { text: 'Founder @ Jyruka', highlight: true },
+  { text: 'Unitaryx Member & Collaborator', highlight: true },
   { text: 'IoT Hardware', highlight: false },
   { text: 'Machine Learning', highlight: false },
   { text: '7 Documented Projects', highlight: true },
@@ -49,12 +50,12 @@ const MARQUEE_ITEMS = [
 ];
 
 export function Home() {
-  useSeo(undefined, 'Portfolio of Ruthramoorthy S B, B.Tech AI & Data Science student and co-founder of Unitaryx. IoT, machine learning and software products.');
+  useSeo(undefined, 'Portfolio of Ruthramoorthy S B, B.Tech AI & Data Science student, Founder of Jyruka, and member of Unitaryx. IoT, machine learning and software products.');
   const { data: projects = [] } = useProjects();
   const featured = sortProjects(projects).filter((p) => p.featured).slice(0, 3);
 
   const stats = [
-    { value: '10', label: 'People on the Unitaryx team' },
+    { value: 'Founder', label: 'Jyruka (Collaborator with Unitaryx)' },
     { value: String(projects.length), label: 'Projects documented here' },
     { value: SITE.graduation, label: 'B.Tech graduation year' },
   ].filter((s) => s.value && s.value !== '0');
@@ -73,7 +74,7 @@ export function Home() {
             </h1>
             <TypingWords />
             <p className="rise rise-3 mt-6 max-w-2xl text-lg font-medium leading-relaxed text-black/85">
-              I build across <span className="font-extrabold text-black">IoT hardware</span>, <span className="font-extrabold text-black">machine learning</span> and <span className="font-extrabold text-black">software products</span>. I study <span className="font-extrabold text-black">Artificial Intelligence</span> &amp; <span className="font-extrabold text-black">Data Science</span>, and I co-founded <span className="font-extrabold text-black">Unitaryx</span>, a student startup where I lead a team of ten.
+              I build across <span className="font-extrabold text-black">IoT hardware</span>, <span className="font-extrabold text-black">machine learning</span> and <span className="font-extrabold text-black">software products</span>. I study <span className="font-extrabold text-black">Artificial Intelligence</span> &amp; <span className="font-extrabold text-black">Data Science</span>. I am the founder of <span className="font-extrabold text-black">Jyruka</span>, collaborating with <span className="font-extrabold text-black">Unitaryx</span> where I am an active member.
             </p>
             <div className="rise rise-4 mt-9 flex flex-wrap items-center justify-center gap-3">
               <ButtonLink to="/projects" size="lg">View projects <ArrowRight size={18} aria-hidden /></ButtonLink>
@@ -138,14 +139,14 @@ export function Home() {
         <div className="card-3d p-8 md:p-12">
           <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:items-center">
             <div>
-              <p className="label font-bold text-fg/80">Venture</p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-fg md:text-4xl">Unitaryx</h2>
+              <p className="label font-bold text-fg/80">Company &amp; Collaboration</p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-fg md:text-4xl">Jyruka <span className="text-2xl font-bold text-black/60">× Unitaryx</span></h2>
             </div>
             <div>
               <p className="text-lg font-medium leading-relaxed text-black/85">
-                A student startup I co-founded. I lead a team of <span className="font-extrabold text-black">ten</span> working across <span className="font-extrabold text-black">IoT hardware</span>, <span className="font-extrabold text-black">machine learning</span> and software product development.
+                I am the founder of <span className="font-extrabold text-black">Jyruka</span>, my own tech company driving IoT, embedded intelligence, and AI systems. Jyruka operates in close collaboration with <span className="font-extrabold text-black">Unitaryx</span>, where I am also an active member engineering deep-tech hardware, predictive machine learning models, and software products.
               </p>
-              <Link to="/unitaryx" className="mt-5 inline-flex items-center gap-1.5 font-black text-black hover:underline">About Unitaryx <ArrowRight size={16} aria-hidden /></Link>
+              <Link to="/unitaryx" className="mt-5 inline-flex items-center gap-1.5 font-black text-black hover:underline">About Jyruka &amp; Unitaryx <ArrowRight size={16} aria-hidden /></Link>
             </div>
           </div>
         </div>

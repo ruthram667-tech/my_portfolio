@@ -4,7 +4,7 @@ import { copyFileSync, writeFileSync, existsSync } from 'node:fs';
 const site = (process.env.VITE_SITE_URL || '').replace(/\/$/, '');
 const base = (process.env.VITE_BASE || '/').replace(/\/?$/, '/');
 const slugs = ['buffex', 'neervahini', 'taskassist', 'hydronix', 'ai-live-coach', 'engineering-calculator-suite', 'newflex'];
-const paths = ['/', '/about', '/projects', '/unitaryx', '/experience', '/skills', '/blog', '/resume', '/contact', ...slugs.map((s) => `/projects/${s}`)];
+const paths = ['/', '/about', '/projects', '/unitaryx', '/jyruka', '/experience', '/skills', '/blog', '/resume', '/contact', ...slugs.map((s) => `/projects/${s}`)];
 
 if (existsSync('dist/index.html')) {
   copyFileSync('dist/index.html', 'dist/404.html'); // GitHub Pages / static hosts: unknown paths load the SPA
