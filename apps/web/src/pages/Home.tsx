@@ -34,6 +34,19 @@ function TypingWords() {
   );
 }
 
+const MARQUEE_ITEMS = [
+  { text: '10 Team Members @ Unitaryx', highlight: true },
+  { text: 'IoT Hardware', highlight: false },
+  { text: 'Machine Learning', highlight: false },
+  { text: '7 Documented Projects', highlight: true },
+  { text: 'Embedded Systems', highlight: false },
+  { text: 'AI & Data Science', highlight: false },
+  { text: 'B.Tech Class of 2029', highlight: true },
+  { text: 'Full-Stack Web', highlight: false },
+  { text: 'Python & C++', highlight: false },
+  { text: 'Fastify & SQLite', highlight: false },
+];
+
 export function Home() {
   useSeo(undefined, 'Portfolio of Ruthramoorthy S B, B.Tech AI & Data Science student and co-founder of Unitaryx. IoT, machine learning and software products.');
   const { data: projects = [] } = useProjects();
@@ -69,14 +82,35 @@ export function Home() {
             </div>
           </div>
         </Container>
+
+        {/* Continuous Horizontal Rotating Marquee */}
+        <div className="relative border-t border-line bg-surface/30 py-3.5 overflow-hidden">
+          <div className="marquee-mask flex overflow-hidden select-none">
+            <div className="animate-marquee flex items-center gap-8 whitespace-nowrap text-sm">
+              {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, idx) => (
+                <div key={idx} className="flex items-center gap-3 font-medium text-muted transition-colors hover:text-gold">
+                  <span className="text-gold/70 text-xs">✦</span>
+                  {item.highlight ? (
+                    <span className="inline-flex items-center rounded-full border border-gold/30 bg-gold/10 px-3 py-0.5 text-xs font-semibold tracking-wide text-gold">
+                      {item.text}
+                    </span>
+                  ) : (
+                    <span className="tracking-wide">{item.text}</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {stats.length >= 2 && (
-          <div className="relative border-t border-line">
+          <div className="relative border-t border-line bg-surface/10">
             <Container>
               <dl className="grid grid-cols-1 divide-y divide-line sm:grid-cols-3 sm:divide-x sm:divide-y-0">
                 {stats.map((s) => (
-                  <div key={s.label} className="px-0 py-6 sm:px-6 first:sm:pl-0">
-                    <dt className="order-2 text-sm text-muted">{s.label}</dt>
-                    <dd className="tabular text-3xl font-bold tracking-tight text-fg">{s.value}</dd>
+                  <div key={s.label} className="group px-0 py-6 sm:px-6 first:sm:pl-0 transition-colors duration-200 hover:bg-surface/30">
+                    <dt className="order-2 text-sm text-muted group-hover:text-fg transition-colors">{s.label}</dt>
+                    <dd className="tabular text-3xl font-bold tracking-tight text-fg group-hover:text-gold transition-colors">{s.value}</dd>
                   </div>
                 ))}
               </dl>
