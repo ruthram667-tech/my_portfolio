@@ -76,10 +76,10 @@ export function ConstellationMesh() {
     const ro = new ResizeObserver(resize);
     if (canvas.parentElement) ro.observe(canvas.parentElement);
 
-    // Vibrant golden constellation colors
-    const GOLD_R = 245;
-    const GOLD_G = 195;
-    const GOLD_B = 55;
+    // Deep black constellation colors
+    const BLACK_R = 10;
+    const BLACK_G = 10;
+    const BLACK_B = 10;
     const MAX_DIST = 140;
     const MOUSE_DIST = 170;
 
@@ -100,8 +100,8 @@ export function ConstellationMesh() {
 
         // Draw particle node
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius * 1.1, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${GOLD_R}, ${GOLD_G}, ${GOLD_B}, ${p.baseAlpha * 1.1})`;
+        ctx.arc(p.x, p.y, p.radius * 1.2, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${BLACK_R}, ${BLACK_G}, ${BLACK_B}, ${Math.min(p.baseAlpha * 1.3, 0.9)})`;
         ctx.fill();
 
         // Connect with nearby particles
@@ -112,12 +112,12 @@ export function ConstellationMesh() {
           const dist = Math.hypot(dx, dy);
 
           if (dist < MAX_DIST) {
-            const alpha = (1 - dist / MAX_DIST) * 0.48;
+            const alpha = (1 - dist / MAX_DIST) * 0.55;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(${GOLD_R}, ${GOLD_G}, ${GOLD_B}, ${alpha})`;
-            ctx.lineWidth = 1.1;
+            ctx.strokeStyle = `rgba(${BLACK_R}, ${BLACK_G}, ${BLACK_B}, ${alpha})`;
+            ctx.lineWidth = 1.15;
             ctx.stroke();
           }
         }
@@ -129,12 +129,12 @@ export function ConstellationMesh() {
           const dist = Math.hypot(dx, dy);
 
           if (dist < MOUSE_DIST) {
-            const alpha = (1 - dist / MOUSE_DIST) * 0.75;
+            const alpha = (1 - dist / MOUSE_DIST) * 0.85;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(mouse.x, mouse.y);
-            ctx.strokeStyle = `rgba(${GOLD_R}, ${GOLD_G}, ${GOLD_B}, ${alpha})`;
-            ctx.lineWidth = 1.3;
+            ctx.strokeStyle = `rgba(${BLACK_R}, ${BLACK_G}, ${BLACK_B}, ${alpha})`;
+            ctx.lineWidth = 1.4;
             ctx.stroke();
           }
         }
@@ -180,7 +180,7 @@ export function ConstellationMesh() {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none absolute inset-0 z-0 h-full w-full opacity-70"
+      className="pointer-events-none absolute inset-0 z-0 h-full w-full opacity-85"
       aria-hidden="true"
     />
   );

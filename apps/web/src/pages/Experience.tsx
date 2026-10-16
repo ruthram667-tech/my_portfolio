@@ -14,7 +14,7 @@ export function Experience() {
         <ol className="relative max-w-3xl space-y-10 border-l border-line-strong pl-8">
           {items.map((e) => (
             <li key={`${e.org}-${e.title}`} className="relative">
-              <span aria-hidden className="absolute -left-[37px] top-1.5 h-2.5 w-2.5 rounded-full bg-gold" />
+              <span aria-hidden className="absolute -left-[37px] top-1.5 h-2.5 w-2.5 rounded-full bg-black shadow-sm" />
               <p className="label">{kindLabel[e.kind]}{e.period ? ` · ${e.period}` : ''}</p>
               <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-black">{e.title}</h2>
               <p className="font-extrabold text-black">{e.org}</p>
